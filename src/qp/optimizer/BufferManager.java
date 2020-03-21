@@ -6,7 +6,7 @@ package qp.optimizer;
 
 public class BufferManager {
 
-    static int numBuffer;
+    public static int numBuffer;
     static int numJoin;
 
     static int buffPerJoin;

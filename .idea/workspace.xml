@@ -18,6 +18,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Z7BTlPugd70VU2Y5jdIwrXzNKC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -103,7 +104,7 @@
       <updated>1584180262560</updated>
       <workItem from="1584180266253" duration="786000" />
       <workItem from="1584759466456" duration="3809000" />
-      <workItem from="1584767838866" duration="5571000" />
+      <workItem from="1584767838866" duration="18313000" />
     </task>
     <servers />
   </component>
@@ -127,10 +128,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="358" y="0" width="838" height="680" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1584769669170" />
+    <state x="388" y="144" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584788701210">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="388" y="144" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1584788701210" />
+    <state x="446" y="42" key="#com.intellij.ide.util.MemberChooser" timestamp="1584782051276">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="42" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1584782051276" />
     <state x="490" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584760396570">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="490" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.680@0.0.1280.680" timestamp="1584760396570" />
+    <state x="380" y="266" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1584777753288">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="380" y="266" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1280.680@0.0.1280.680" timestamp="1584777753288" />
     <state x="358" y="50" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1584768504912">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -163,20 +176,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="341" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1584767839538" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1584759837247">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1584781762820">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1584759837247" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/qp/operators/Distinct.java</url>
-          <line>2</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1584781762820" />
   </component>
 </project>
