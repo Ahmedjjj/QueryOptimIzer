@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ef36f7ca-1079-40e5-b30d-fb5013251f69" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1Z7BTlPugd70VU2Y5jdIwrXzNKC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/testcases" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager" selected="Application.QueryMain (1)">
+    <configuration name="ConvertTxtToTbl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ConvertTxtToTbl" />
+      <module name="COMPONENT" />
+      <option name="PROGRAM_PARAMETERS" value="testcases/CUSTOMER" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryMain (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="QueryMain" />
+      <module name="COMPONENT" />
+      <option name="PROGRAM_PARAMETERS" value="query1.sql new 4096" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="QueryMain" />
+      <module name="COMPONENT" />
+      <option name="PROGRAM_PARAMETERS" value="query1.sql new" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="QueryMain" />
+      <module name="COMPONENT" />
+      <option name="PROGRAM_PARAMETERS" value="testcases/query1.sql new" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RandomDB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RandomDB" />
+      <module name="COMPONENT" />
+      <option name="PROGRAM_PARAMETERS" value="testcases/CUSTOMER 50 " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.QueryMain" />
+      <item itemvalue="Application.RandomDB" />
+      <item itemvalue="Application.ConvertTxtToTbl" />
+      <item itemvalue="Application.QueryMain (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.QueryMain (1)" />
+        <item itemvalue="Application.QueryMain" />
+        <item itemvalue="Application.ConvertTxtToTbl" />
+        <item itemvalue="Application.RandomDB" />
+        <item itemvalue="Application.QueryMain" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ef36f7ca-1079-40e5-b30d-fb5013251f69" name="Default Changelist" comment="" />
+      <created>1584180262560</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584180262560</updated>
+      <workItem from="1584180266253" duration="786000" />
+      <workItem from="1584759466456" duration="3809000" />
+      <workItem from="1584767838866" duration="5571000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="233" y="0" key="#Project_Structure" timestamp="1584760284233">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="0" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1584760284233" />
+    <state x="292" y="0" width="575" height="680" key="#QueryMain" timestamp="1584761359499">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="292" y="0" width="575" height="680" key="#QueryMain/0.0.1280.680@0.0.1280.680" timestamp="1584761359499" />
+    <state x="360" y="0" width="575" height="680" key="#QueryMain_(1)" timestamp="1584769732559">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="360" y="0" width="575" height="680" key="#QueryMain_(1)/0.0.1280.680@0.0.1280.680" timestamp="1584769732559" />
+    <state x="358" y="0" width="838" height="680" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584769669170">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="358" y="0" width="838" height="680" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1584769669170" />
+    <state x="490" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584760396570">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="490" y="230" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.680@0.0.1280.680" timestamp="1584760396570" />
+    <state x="358" y="50" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1584768504912">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="358" y="50" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.1280.680@0.0.1280.680" timestamp="1584768504912" />
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1584769725488">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1584769725488" />
+    <state width="1237" height="111" key="GridCell.Tab.0.bottom" timestamp="1584769750848">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="111" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1584769750848" />
+    <state width="1237" height="111" key="GridCell.Tab.0.center" timestamp="1584769750847">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="111" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1584769750847" />
+    <state width="1237" height="111" key="GridCell.Tab.0.left" timestamp="1584769750847">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="111" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1584769750847" />
+    <state width="1237" height="111" key="GridCell.Tab.0.right" timestamp="1584769750847">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="111" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1584769750847" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1584769396785">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1584769396785" />
+    <state x="341" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1584767839538">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="341" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1584767839538" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1584759837247">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1584759837247" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/qp/operators/Distinct.java</url>
+          <line>2</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
