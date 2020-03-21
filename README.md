@@ -1,1 +1,1 @@
-# QueryOptimIzer
+# QueryOptimizer
