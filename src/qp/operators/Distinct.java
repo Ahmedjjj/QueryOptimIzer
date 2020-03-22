@@ -4,8 +4,6 @@ import qp.utils.Batch;
 
 public final class Distinct extends Operator {
 
-
-
     private final Operator base;
     private Operator sortedBase;
     public Distinct(int type , Operator base) {
@@ -15,16 +13,20 @@ public final class Distinct extends Operator {
 
     @Override
     public boolean open() {
-        return super.open();
+        sortedBase = new Sort(base.getSchema().getAttList(),base,true);
+        sortedBase.open();
+        return true;
     }
 
     @Override
     public boolean close() {
-        return super.close();
+        sortedBase.close();
+        base.close();
+        return true;
     }
 
     @Override
     public Batch next() {
-        return super.next();
+        return sortedBase.next();
     }
 }
