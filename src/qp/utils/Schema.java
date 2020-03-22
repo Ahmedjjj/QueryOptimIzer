@@ -13,6 +13,10 @@ public class Schema implements Serializable {
 
     public Schema(ArrayList<Attribute> colset) {
         attset = new ArrayList<>();
+        tupleSize = 0;
+        for (Attribute a : attset){
+            tupleSize += a.getAttrSize();
+        }
         for (Object o : colset) {
             attset.add((Attribute) o);
         }
