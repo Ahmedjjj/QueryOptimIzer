@@ -84,8 +84,9 @@ public class BlockNestedJoin extends Join {
             if (!right.close())
                 return false;
         }
-        return left.open()? true: false;
+        return left.open() ? true : false;
     }
+
     /**
      * from input buffers selects the tuples satisfying join condition
      * * And returns a page of output tuples
@@ -100,16 +101,16 @@ public class BlockNestedJoin extends Join {
         if (lbuffcurs == 0 && lcurs == 0 && eosr) {
             /** new left block is to be fetched **/
             leftbatch.clear();
-            while(leftbatch.size() < nb_output_buffersl){
+            while (leftbatch.size() < nb_output_buffersl) {
                 Batch newBatch = (Batch) left.next();
-                if(newBatch == null || newBatch.isEmpty()){
+                if (newBatch == null || newBatch.isEmpty()) {
                     eosl = true;
                     break;
                 }
                 leftbatch.add(newBatch);
             }
 
-            if(leftbatch == null || leftbatch.isEmpty()){ //if the whole block is empty or null
+            if (leftbatch == null || leftbatch.isEmpty()) { //if the whole block is empty or null
                 eosl = true;
                 return outbatch;
             }
@@ -143,19 +144,19 @@ public class BlockNestedJoin extends Join {
                             if (lefttuple.checkJoin(righttuple, leftindex, rightindex)) {
                                 outbatch.add(lefttuple.joinWith(righttuple));
                                 if (outbatch.isFull()) {
-                                    if (r != rightbatch.size()-1) {//case 1: inner loop not completed
+                                    if (r != rightbatch.size() - 1) {//case 1: current right batch has tuples
                                         lbuffcurs = i;
                                         lcurs = j;
-                                        rcurs = r+1;
-                                    } else if (j != lbatch.size()-1){ //case 2: current leftbatch not completed;
+                                        rcurs = r + 1;
+                                    } else if (j != lbatch.size() - 1) { //case 2: current left batch hasn't completed
                                         lbuffcurs = i;
-                                        lcurs = j+1;
+                                        lcurs = j + 1;
                                         rcurs = 0;
-                                    } else if(i != leftbatch.size()-1){//case 3: left block have unprocessed buffer
-                                        lbuffcurs = i+1;
+                                    } else if (i != leftbatch.size() - 1) {//case 3: left block still has batches
+                                        lbuffcurs = i + 1;
                                         lcurs = 0;
                                         rcurs = 0;
-                                    } else {// case 4: left block completed
+                                    } else {// case 4: everything has been compared
                                         lbuffcurs = 0;
                                         lcurs = 0;
                                         rcurs = 0;
@@ -169,17 +170,17 @@ public class BlockNestedJoin extends Join {
                     lcurs = 0;
                 }
                 lbuffcurs = 0;
-            } catch(EOFException e){
-                try{
+            } catch (EOFException e) {
+                try {
                     in.close();
-                }catch (IOException io){
+                } catch (IOException io) {
                     System.out.println("BlockNestedJoin:Error in temporary file reading");
                 }
-                eosr=true;
-            } catch(ClassNotFoundException c){
+                eosr = true;
+            } catch (ClassNotFoundException c) {
                 System.out.println("BlockNestedJoin:Some error in deserialization ");
                 System.exit(1);
-            } catch(IOException io){
+            } catch (IOException io) {
                 System.out.println("BlockNestedJoin:temporary file reading error");
                 System.exit(1);
             }
@@ -187,6 +188,7 @@ public class BlockNestedJoin extends Join {
 
         return outbatch;
     }
+
     /**
      * Close the operator
      */
