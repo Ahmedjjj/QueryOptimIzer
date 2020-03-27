@@ -33,7 +33,7 @@ public class BlockNestedJoin extends Join {
         schema = jn.getSchema();
         jointype = jn.getJoinType();
         numBuff = jn.getNumBuff();
-        nb_output_buffersl = numBuff - 2; //need to save one buffer for the right table and out for output
+        nb_output_buffersl = numBuff - 2; //need to save one buffer for the right table and one for output
     }
 
     public boolean open() {
@@ -60,7 +60,7 @@ public class BlockNestedJoin extends Join {
          **/
         eosr = true;
         /** Right hand side table is to be materialized
-         ** for the Nested join to perform
+         ** for the Block Nested join to perform
          **/
         if (!right.open()) {
             return false;
@@ -70,7 +70,7 @@ public class BlockNestedJoin extends Join {
              ** into a file
              **/
             filenum++;
-            rfname = "NJtemp-" + String.valueOf(filenum);
+            rfname = "BNJtemp-" + String.valueOf(filenum);
             try {
                 ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(rfname));
                 while ((rightpage = right.next()) != null) {
