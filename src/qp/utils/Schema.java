@@ -4,6 +4,8 @@
 
 package qp.utils;
 
+import qp.operators.Debug;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -100,6 +102,10 @@ public class Schema implements Serializable {
         int newTupleSize = 0;
         for (int i = 0; i < attrlist.size(); ++i) {
             Attribute resAttr = attrlist.get(i);
+            //System.out.println("atribute: ");
+            //Debug.PPrint(resAttr);
+            //System.out.println("schema: ");
+            //Debug.PPrint(this);
             int baseIndex = this.indexOf(resAttr.getBaseAttribute());
             Attribute baseAttr = (Attribute) this.getAttribute(baseIndex).clone();
             baseAttr.setAggType(resAttr.getAggType());

@@ -33,7 +33,12 @@ public class BlockNestedJoin extends Join {
         schema = jn.getSchema();
         jointype = jn.getJoinType();
         numBuff = jn.getNumBuff();
-        nb_output_buffersl = numBuff - 2; //need to save one buffer for the right table and one for output
+        nb_output_buffersl = numBuff - 2; //need to save one buffer for the right table and one for output,
+        // however at this point normally numBuff = 0, will be set later by the Random Optimizer
+    }
+
+    public void setNumBuffUsed(int nb_output_buffers){
+        nb_output_buffersl = nb_output_buffers;
     }
 
     public boolean open() {
@@ -100,7 +105,8 @@ public class BlockNestedJoin extends Join {
         outbatch = new Batch((batchsize));
         if (lbuffcurs == 0 && lcurs == 0 && eosr) {
             /** new left block is to be fetched **/
-            leftbatch.clear();
+
+            leftbatch = new ArrayList<>();
             while (leftbatch.size() < nb_output_buffersl) {
                 Batch newBatch = (Batch) left.next();
                 if (newBatch == null || newBatch.isEmpty()) {
