@@ -60,6 +60,7 @@ public class RandomOptimizer {
                     bnj.setLeft(left);
                     bnj.setRight(right);
                     bnj.setNumBuff(numbuff);
+                    bnj.setNumBuffUsed(numbuff - 2);
                     return bnj;
 
                 default:
