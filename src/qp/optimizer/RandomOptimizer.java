@@ -60,7 +60,7 @@ public class RandomOptimizer {
                     bnj.setLeft(left);
                     bnj.setRight(right);
                     bnj.setNumBuff(numbuff);
-                    bnj.setNumBuffUsed(numbuff - 2);
+                    bnj.setNumBuffUsed(numbuff - 2);//need to save one buffer for the right table and one for output
                     return bnj;
 
                 default:
@@ -119,6 +119,7 @@ public class RandomOptimizer {
         } else {
             NUMITER = 1;
         }
+        System.out.println("----------- starting Iterative Improvement-------------");
 
         /** Randomly restart the gradient descent until
          *  the maximum specified number of random restarts (NUMITER)
@@ -127,7 +128,7 @@ public class RandomOptimizer {
         for (int j = 0; j < NUMITER; ++j) {
             Operator initPlan = rip.prepareInitialPlan();
             modifySchema(initPlan);
-            System.out.println("-----------initial Plan-------------");
+            System.out.println("-----------initial Plan for Iterative Improvement-------------");
             Debug.PPrint(initPlan);
             PlanCost pc = new PlanCost();
             long initCost = pc.getCost(initPlan);
@@ -181,7 +182,7 @@ public class RandomOptimizer {
                         flag = false;  // local minimum reached
                     }
                 }
-                System.out.println("------------------local minimum--------------");
+                System.out.println("------------------local minimum for Iterative Improvement--------------");
                 Debug.PPrint(minNeighbor);
                 System.out.println(" " + minNeighborCost);
             }
@@ -191,11 +192,82 @@ public class RandomOptimizer {
             }
         }
         System.out.println("\n\n\n");
-        System.out.println("---------------------------Final Plan----------------");
+        System.out.println("---------------------------Final Plan for Iterative Improvement----------------");
         Debug.PPrint(finalPlan);
         System.out.println("  " + MINCOST);
-        return finalPlan;
+        //return finalPlan;
+        return simulatedAnnealing(finalPlan);
     }
+
+    private boolean frozen(double temperature, int nb_min_unchanged) { // checks if a global minimum is found
+        return temperature < 1 && nb_min_unchanged >= 4;
+    }
+
+    private boolean equilibrium(int equilibrium) { // checks if an equilibrium has been reached for this stage
+        return equilibrium == 0;
+    }
+
+    protected Operator simulatedAnnealing(Operator minState) {
+        System.out.println();
+        System.out.println("-----------starting Simulated Annealing-------------");
+        if(numJoin == 0){
+            System.out.println("-----------Simulated Annealing end - no join -------------");
+            return minState;
+        }
+        Operator currState = (Operator) minState.clone(); // initial state = min state from Iterative Improvement
+        Operator neighborState;
+        PlanCost pc = new PlanCost();
+        long IIcost = pc.getCost(currState);
+        long currCost = IIcost; //initial cost=min cost from Iterative Improvement
+        double temperature = 0.1 * currCost; // initial temperature
+        //double freeze_temp = Math.pow(10, -4);
+        //System.out.print("current temperature: " + temperature);
+        long deltaCost, neighborCost;
+        int min_unchanged_count = 0; // keeps track of the number of times the minimum has not been changed
+        int equiCount = 16 * numJoin; // initializing the equilibrium condition
+        while (!frozen(temperature, min_unchanged_count)) {
+            while (!equilibrium(equiCount)) {
+                neighborState = (Operator) currState.clone();
+                neighborState = getNeighbor(neighborState);
+                //System.out.println();
+                //Debug.PPrint(neighborState);
+                //System.out.println();
+                neighborCost = pc.getCost(neighborState);
+                deltaCost = neighborCost - currCost; // getting the cost difference
+                if (deltaCost <= 0) {
+                    currState = neighborState;
+                    currCost = neighborCost;
+                } else {
+                    double probability = Math.exp(-deltaCost / temperature); // trying to escape the local minimum, in order to reach a global one
+                    if (Math.random() <= probability) {
+                        currState = neighborState; // updating the current minimum for this stage
+                        currCost = neighborCost;
+                    }
+                }
+                if (currCost < pc.getCost(minState)) { // updating the global minimum
+                    minState = currState;
+                    min_unchanged_count = 0;
+                } else {
+                    min_unchanged_count++; // updating the count for the unchanged minimum
+                }
+                equiCount--;
+            }
+            equiCount = 16 * numJoin; // reinitialize equilibrium for next stage
+            temperature = 0.95 * temperature; //cooling phase
+        }
+        Debug.PPrint(minState);
+        System.out.println();
+        long minCost = pc.getCost(minState);
+        System.out.println("final plan cost: " + minCost);
+        System.out.println("-----------Simulated Annealing end-------------");
+        System.out.println();
+        System.out.println(" Iterative Improvement plan cost was " + IIcost + "\n");
+        System.out.println(" Current plan cost found with Simulated Annealing is: " + minCost);
+        System.out.println();
+
+        return minState;
+    }
+
 
     /**
      * Selects a random method choice for join wiht number joinNum

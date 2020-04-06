@@ -125,7 +125,6 @@ public class NestedJoin extends Join {
                     System.err.println("NestedJoin:error in reading the file");
                     System.exit(1);
                 }
-
             }
             while (eosr == false) {
                 try {
