@@ -6,8 +6,8 @@ public final class Distinct extends Operator {
 
     private final Operator base;
     private Operator sortedBase;
-    public Distinct(int type , Operator base) {
-        super(type);
+    public Distinct(Operator base) {
+        super(OpType.DISTINCT);
         this.base = base;
     }
 
