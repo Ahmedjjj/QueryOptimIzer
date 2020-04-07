@@ -83,7 +83,7 @@ public class RandomInitialPlan {
         if (!orderByPossible){
             throw new IllegalArgumentException("Some attributes do not exist in the schema of the resulting table.");
         }
-        Operator newRoot = new Sort(orderByAttributes,root,false);\
+        Operator newRoot = new Sort(orderByAttributes,root,false);
         newRoot.setSchema(root.getSchema());
     }
 
