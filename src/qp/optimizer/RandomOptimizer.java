@@ -237,9 +237,9 @@ public class RandomOptimizer {
                 if (deltaCost <= 0) {
                     currState = neighborState;
                     currCost = neighborCost;
-                } else {
-                    double probability = Math.exp(-deltaCost / temperature); // trying to escape the local minimum, in order to reach a global one
-                    if (Math.random() <= probability) {
+                } else { // trying to escape the local minimum, in order to reach a global one
+                    double probability = Math.exp(-deltaCost / temperature);
+                    if (Math.random() <= probability) { // accepting a change to a state that will increase the cost with probability exp(-dc/temp)
                         currState = neighborState; // updating the current minimum for this stage
                         currCost = neighborCost;
                     }
