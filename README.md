@@ -5,6 +5,7 @@ Modifications made:
 1. Block Nested Join
 This join algorithm was implemented in the class BlockNestedJoin.java. The makeExecPlan method of the RandomOptimizer.java was modified to support this join type. The join cost calculation is added in the getStatistics method in PlanCost.java.  
 2. Index Nested Join
+This join algorithm was implemented in the class IndexNestedJoin.java. The makeExecPlan method of the RandomOptimizer.java was modified to support this join type. The join cost calculation is added in the getStatistics method in PlanCost.java.
 3. External Sort
 We implemented a general version of external sort, that can sort on any number of attributes. This is easily done by using
 Java's Comparator interface. The comparison is done from left to right, i.e we compare the first attribute then the second if the 
