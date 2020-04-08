@@ -60,12 +60,12 @@ public class RandomInitialPlan {
         if (numJoin != 0) {
             createJoinOp();
         }
-        if (sqlquery.getOrderByList().size() > 0) {
-               createOrderByOp();
-        }
         createProjectOp();
         if (sqlquery.isDistinct()){
             createDistinctOp();
+        }
+        if (sqlquery.getOrderByList().size() > 0) {
+            createOrderByOp();
         }
         return root;
     }

@@ -113,7 +113,7 @@
       <workItem from="1585367116614" duration="72000" />
       <workItem from="1586242829018" duration="3045000" />
       <workItem from="1586261612035" duration="5079000" />
-      <workItem from="1586311127067" duration="11563000" />
+      <workItem from="1586311127067" duration="25516000" />
     </task>
     <servers />
   </component>
@@ -193,10 +193,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="376" y="234" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1280.680@0.0.1280.680" timestamp="1586264855805" />
-    <state x="336" y="72" width="609" height="536" key="find.popup" timestamp="1586329879507">
+    <state x="336" y="72" width="609" height="536" key="find.popup" timestamp="1586340909914">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="336" y="72" width="609" height="536" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1586329879507" />
+    <state x="336" y="72" width="609" height="536" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1586340909914" />
     <state x="91" y="0" key="new project wizard" timestamp="1584847763117">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -205,9 +205,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1586329862895" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1586265783951">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1586343708437">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1586265783951" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1586343708437" />
   </component>
 </project>

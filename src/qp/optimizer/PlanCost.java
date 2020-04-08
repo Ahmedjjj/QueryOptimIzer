@@ -76,14 +76,30 @@ public class PlanCost {
             return getStatistics((Project) node);
         } else if (node.getOpType() == OpType.SCAN) {
             return getStatistics((Scan) node);
-        }else if (node.getOpType() == OpType.DISTINCT){
+        } else if (node.getOpType() == OpType.DISTINCT) {
             return getStatistics((Distinct) node);
-        }else if (node.getOpType() == OpType.SORT){
+        } else if (node.getOpType() == OpType.SORT) {
             return getStatistics((Sort) node);
         }
         System.out.println("operator is not supported");
         isFeasible = false;
         return 0;
+    }
+
+    private int roundUpDivision(int a, int b) {
+        return a / b + (a % b == 0 ? 0 : 1);
+    }
+
+    private long getSortingCost(Operator node) {
+        int numBuffers = BufferManager.numBuffer;
+        int tupleSize = node.getSchema().getTupleSize();
+        int pageSize = Batch.getPageSize();
+        int numPages = roundUpDivision(pageSize, tupleSize);
+        int sortedRunsNum = roundUpDivision(numPages, numBuffers);
+        int sortedRunsCost = 2 * numPages;
+        int mergeCost = (int) Math.ceil(Math.log(sortedRunsNum) / Math.log(numBuffers - 1));
+        return sortedRunsCost + 2 * mergeCost * numPages;
+
     }
 
     protected long getStatistics(Sort node) {
@@ -94,12 +110,12 @@ public class PlanCost {
         long numTuples = calculateCost(node.getBase());
         Schema nodeSchema = node.getSchema();
         long numberOfRepetitions = numTuples;
-        for (Attribute attribute : nodeSchema.getAttList()){
+        for (Attribute attribute : nodeSchema.getAttList()) {
             Long numberOfDistinctValuesInTable = ht.get(attribute);
-            numberOfRepetitions = Math.max(numberOfRepetitions / numberOfDistinctValuesInTable,1);
+            numberOfRepetitions = Math.max(numberOfRepetitions / numberOfDistinctValuesInTable, 1);
         }
-        return (long) Math.ceil( ((double)numTuples) / numberOfRepetitions);
-}
+        return (long) Math.ceil(((double) numTuples) / numberOfRepetitions);
+    }
 
     /**
      * Projection will not change any statistics
@@ -167,7 +183,7 @@ public class PlanCost {
                 joincost = leftpages + (leftpages / available_buff) * rightpages;
                 break;
             case JoinType.INDEXNESTED: // adding the cost for IndexNestedLoopJoin
-                joincost = (int) (leftpages + ((1.2 + 1) * leftuplesize));
+                joincost = (int) (leftpages + ((1.2) * outtuples));
                 break;
             default:
                 System.out.println("join type is not supported");

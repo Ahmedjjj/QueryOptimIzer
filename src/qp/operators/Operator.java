@@ -32,15 +32,17 @@ public class Operator {
     }
 
     public boolean open() {
-        System.err.println("Abstract interface cannot be used.");
-        System.exit(1);
-        return true;
+        throw new IllegalStateException();
+        //System.err.println("Abstract interface cannot be used.");
+        //System.exit(1);
+        //return true;
     }
 
     public Batch next() {
-        System.err.println("Abstract interface cannot be used.");
-        System.exit(1);
-        return null;
+        throw new IllegalArgumentException();
+        //System.err.println("Abstract interface cannot be used.");
+        //System.exit(1);
+        //return null;
     }
 
     public boolean close() {
