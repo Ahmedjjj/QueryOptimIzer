@@ -89,6 +89,9 @@ public class Debug {
                 case JoinType.BLOCKNESTED:
                     System.out.print("BlockNested(");
                     break;
+                case JoinType.INDEXNESTED:
+                    System.out.print("IndexNested(");
+                    break;
                 case JoinType.SORTMERGE:
                     System.out.print("SortMerge(");
                     break;
