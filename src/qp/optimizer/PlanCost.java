@@ -160,7 +160,7 @@ public class PlanCost {
 
         switch (joinType) {
             case JoinType.NESTEDJOIN:
-                joincost = leftpages + lefttuples * rightpages; //BUG This was wrong, it was: leftpages*rightpages
+                joincost = leftpages + lefttuples * rightpages; //BUG identified, this was wrong - initially: joincost = leftpages*rightpages
                 break;
             case JoinType.BLOCKNESTED: // adding the cost for BlockNestedLoopJoin
                 long available_buff = numbuff - 2;
