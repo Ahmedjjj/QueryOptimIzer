@@ -11,6 +11,10 @@ public final class Distinct extends Operator {
         this.base = base;
     }
 
+    public Operator getBase() {
+        return this.base;
+    }
+
     @Override
     public boolean open() {
         sortedBase = new Sort(base.getSchema().getAttList(),base,true);
