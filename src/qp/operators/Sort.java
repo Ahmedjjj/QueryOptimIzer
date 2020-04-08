@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public final class Sort extends Operator {
 
     private final List<Attribute> sortAttributes;
-    private final Operator base;
+    private Operator base;
     private final List<Integer> attributeIndexes;
     private final Comparator<Tuple> comparator;
     private final int batchSize;
@@ -38,21 +38,27 @@ public final class Sort extends Operator {
     public boolean open() {
         base.open();
         File file = sort();
-        try {
-            batchInputStream = new ObjectInputStream(new FileInputStream(file.getName()));
-            sortedFile = file;
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (file != null) {
+            try {
+                batchInputStream = new ObjectInputStream(new FileInputStream(file.getName()));
+                sortedFile = file;
+                return true;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        return true;
+        return false;
     }
 
     @Override
     public boolean close() {
         try {
-            sortedFile.delete();
+            if (sortedFile != null){
+                sortedFile.delete();
+                batchInputStream.close();
+            }
             base.close();
-            batchInputStream.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -62,7 +68,11 @@ public final class Sort extends Operator {
     @Override
     public Batch next() {
         try {
-            return (Batch) batchInputStream.readObject();
+            if (sortedFile!=null) {
+                return (Batch) batchInputStream.readObject();
+            }else {
+                return null;
+            }
         } catch (EOFException e) {
             return null;
         } catch (IOException e) {
@@ -86,8 +96,11 @@ public final class Sort extends Operator {
         while (generateRun("run" + numRuns )){
             numRuns ++;
         }
-        File mergedFile = mergeRuns(sortedRuns);
-        return mergedFile;
+        if (numRuns > 0) {
+            File mergedFile = mergeRuns(sortedRuns);
+            return mergedFile;
+        }
+        return null;
     }
     private File mergeRuns (List<File> runs){
         if (runs == null) {
@@ -199,5 +212,15 @@ public final class Sort extends Operator {
         tupleWriter.close();
         return true;
 
+    }
+    public void setBase (Operator base){
+        this.base = base;
+
+    }
+    public Object clone() {
+
+        Sort newSort = new Sort(sortAttributes,(Operator)base.clone(),distinct);
+        newSort.setSchema((Schema)this.getSchema().clone());
+        return newSort;
     }
 }
