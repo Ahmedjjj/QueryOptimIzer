@@ -25,6 +25,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -108,7 +112,8 @@
       <workItem from="1584846853627" duration="18476000" />
       <workItem from="1585367116614" duration="72000" />
       <workItem from="1586242829018" duration="3045000" />
-      <workItem from="1586261612035" duration="2639000" />
+      <workItem from="1586261612035" duration="5079000" />
+      <workItem from="1586311127067" duration="11563000" />
     </task>
     <servers />
   </component>
@@ -180,17 +185,29 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1584769396785" />
-    <state x="341" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1586261649153">
+    <state x="341" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1586311368465">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="341" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1586261649153" />
+    <state x="341" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1586311368465" />
+    <state x="376" y="234" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1586264855805">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="376" y="234" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1280.680@0.0.1280.680" timestamp="1586264855805" />
+    <state x="336" y="72" width="609" height="536" key="find.popup" timestamp="1586329879507">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="336" y="72" width="609" height="536" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1586329879507" />
     <state x="91" y="0" key="new project wizard" timestamp="1584847763117">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="91" y="0" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1584847763117" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1584781762820">
+    <state x="297" y="151" key="run.anything.popup" timestamp="1586329862895">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1584781762820" />
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1586329862895" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1586265783951">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1586265783951" />
   </component>
 </project>

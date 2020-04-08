@@ -30,8 +30,13 @@ public final class Sort extends Operator {
         this.distinct = distinct;
     }
 
+    public Operator getBase(){
+        return base;
+    }
+
     @Override
     public boolean open() {
+        base.open();
         File file = sort();
         try {
             batchInputStream = new ObjectInputStream(new FileInputStream(file.getName()));
@@ -175,6 +180,7 @@ public final class Sort extends Operator {
 
         int batchesRead = 0;
         Batch current;
+
         while (batchesRead < numBuffers && (current = base.next()) != null){
             runTuples.addAll(current.getTuples());
             batchesRead++;
