@@ -1,14 +1,12 @@
 package qp.operators;
 
-import qp.utils.Attribute;
-import qp.utils.Batch;
-import qp.utils.IndexBuilder;
-import qp.utils.Tuple;
+import qp.utils.*;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
-public class IndexNestedJoin extends Join {
+public class IndexNestedJoin extends Join{
 
     static int filenum = 0;         // To get unique filenum for this operation
     private int batchsize;                  // Number of tuples per out batch
@@ -73,16 +71,17 @@ public class IndexNestedJoin extends Join {
         if(lcurs == 0 && eosl == true){
             close();
             return null;
+        } else{
+            return generateOutbatch();
         }
-
-        return generateOutbatch();
     }
 
     public Batch generateOutbatch() {
         /** Buffer page for output **/
         Batch outbatch = new Batch(batchsize);
-        /** Add tuples to outbatch **/
+        /** Adds tuples to outbatch **/
         while(outbatch.isFull() == false){
+            /** Gets next leftbatch **/
             if(lcurs == 0){
                 leftbatch = left.next();
                 if(leftbatch == null) {
@@ -90,6 +89,7 @@ public class IndexNestedJoin extends Join {
                     return outbatch;
                 }
             }
+            /** Check remaining tuples in right table **/
             if (rcurs != 0) {
                 Tuple latestlefttuple = leftbatch.get(lcurs);
                 for (int i = rcurs; i < matches.size(); i++) {
@@ -98,6 +98,7 @@ public class IndexNestedJoin extends Join {
                     Tuple outbatchtuple = latestlefttuple.joinWith(matches.get(i));
                     outbatch.add(outbatchtuple);
                         if(outbatch.isFull() == true){
+                        /** Determine next position of lcurs and rcurs  **/
                             int matchCount = matches.size() - 1;
                                 if(i == matchCount){
                                     lcurs = lcurs + 1;
@@ -114,6 +115,7 @@ public class IndexNestedJoin extends Join {
             lcurs = lcurs % leftbatch.size();
             rcurs = 0;
         }
+        /** Join matching tuples  **/    
         for (int i = lcurs; i < leftbatch.size(); i++) {
             Tuple lefttuple = leftbatch.get(i);
             matches = indexTable.get(lefttuple.dataAt(leftindex));
