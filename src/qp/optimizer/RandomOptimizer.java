@@ -205,6 +205,9 @@ public class RandomOptimizer {
         return simulatedAnnealing(finalPlan);
     }
 
+
+
+
     private boolean frozen(double temperature, int nb_min_unchanged) { // checks if a global minimum is found
         return temperature < 1 && nb_min_unchanged >= 4;
     }
@@ -227,7 +230,6 @@ public class RandomOptimizer {
         long currCost = IIcost; //initial cost=min cost from Iterative Improvement
         double temperature = 0.1 * currCost; // initial temperature
         //double freeze_temp = Math.pow(10, -4);
-        //System.out.print("current temperature: " + temperature);
         long deltaCost, neighborCost;
         int min_unchanged_count = 0; // keeps track of the number of times the minimum has not been changed
         int equiCount = 16 * numJoin; // initializing the equilibrium condition
@@ -273,6 +275,7 @@ public class RandomOptimizer {
 
         return minState;
     }
+
 
 
     /**
