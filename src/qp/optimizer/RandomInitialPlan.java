@@ -12,6 +12,7 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.HashMap;
+import java.util.List;
 
 public class RandomInitialPlan {
 
@@ -58,10 +59,6 @@ public class RandomInitialPlan {
             System.exit(1);
         }
 
-        if (sqlquery.getOrderByList().size() > 0) {
-            System.err.println("Orderby is not implemented.");
-            System.exit(1);
-        }
 
         tab_op_hash = new HashMap<>();
         createScanOp();
@@ -69,11 +66,32 @@ public class RandomInitialPlan {
         if (numJoin != 0) {
             createJoinOp();
         }
+        if (sqlquery.getOrderByList().size() > 0) {
+               createOrderByOp();
+        }
         createProjectOp();
-
+        if (sqlquery.isDistinct()){
+            createDistinctOp();
+        }
         return root;
     }
 
+    private void createOrderByOp() {
+        List<Attribute> orderByAttributes = sqlquery.getOrderByList();
+        Schema rootSchema = root.getSchema();
+        boolean orderByPossible = orderByAttributes.stream().allMatch(a -> rootSchema.contains(a));
+        if (!orderByPossible){
+            throw new IllegalArgumentException("Some attributes do not exist in the schema of the resulting table.");
+        }
+        Operator newRoot = new Sort(orderByAttributes,root,false);
+        newRoot.setSchema(root.getSchema());
+    }
+
+    private void createDistinctOp (){
+        Operator newRoot = new Distinct (root);
+        newRoot.setSchema(root.getSchema());
+        root = newRoot;
+    }
     /**
      * Create Scan Operator for each of the table
      * * mentioned in from list
