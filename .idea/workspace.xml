@@ -28,7 +28,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/testcases" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -105,7 +105,10 @@
       <workItem from="1584180266253" duration="786000" />
       <workItem from="1584759466456" duration="3809000" />
       <workItem from="1584767838866" duration="20815000" />
-      <workItem from="1584846853627" duration="18055000" />
+      <workItem from="1584846853627" duration="18476000" />
+      <workItem from="1585367116614" duration="72000" />
+      <workItem from="1586242829018" duration="3045000" />
+      <workItem from="1586261612035" duration="2639000" />
     </task>
     <servers />
   </component>
@@ -145,14 +148,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="380" y="266" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1280.680@0.0.1280.680" timestamp="1584777753288" />
+    <state x="438" y="200" width="404" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1586247217837">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="438" y="200" width="404" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680@0.0.1280.680" timestamp="1586247217837" />
     <state x="358" y="50" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1584768504912">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="358" y="50" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.0.1280.680@0.0.1280.680" timestamp="1584768504912" />
-    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1584769725488">
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1585367184851">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1584769725488" />
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585367184851" />
     <state width="1237" height="111" key="GridCell.Tab.0.bottom" timestamp="1584809120071">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -173,10 +180,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1584769396785" />
-    <state x="341" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1584846856044">
+    <state x="341" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1586261649153">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="341" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1584846856044" />
+    <state x="341" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1586261649153" />
     <state x="91" y="0" key="new project wizard" timestamp="1584847763117">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
