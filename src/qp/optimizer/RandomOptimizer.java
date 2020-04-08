@@ -62,6 +62,12 @@ public class RandomOptimizer {
                     bnj.setNumBuff(numbuff);
                     bnj.setNumBuffUsed(numbuff - 2);//need to save one buffer for the right table and one for output
                     return bnj;
+                case JoinType.INDEXNESTED:
+                    IndexNestedJoin inj = new IndexNestedJoin((Join) node);
+                    inj.setLeft(left);
+                    inj.setRight(right);
+                    inj.setNumBuff(numbuff);
+                    return inj;
 
                 default:
                     return node;
