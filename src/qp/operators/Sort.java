@@ -47,7 +47,7 @@ public final class Sort extends Operator {
                 e.printStackTrace();
             }
         }
-        return false;
+        return true;
     }
 
     @Override
@@ -92,6 +92,7 @@ public final class Sort extends Operator {
     }
 
     private File sort (){
+
         int numRuns = 0;
         while (generateRun("run" + numRuns )){
             numRuns ++;

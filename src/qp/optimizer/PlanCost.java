@@ -68,6 +68,7 @@ public class PlanCost {
      * Returns number of tuples in the root
      **/
     protected long calculateCost(Operator node) {
+
         if (node.getOpType() == OpType.JOIN) {
             return getStatistics((Join) node);
         } else if (node.getOpType() == OpType.SELECT) {
@@ -141,6 +142,7 @@ public class PlanCost {
 
         /** Get size of the tuple in output & correspondigly calculate
          ** buffer capacity, i.e., number of tuples per page **/
+        node.setSchema(leftschema.joinWith(rightschema));
         long tuplesize = node.getSchema().getTupleSize();
         long outcapacity = Math.max(1, Batch.getPageSize() / tuplesize);
         long leftuplesize = leftschema.getTupleSize();

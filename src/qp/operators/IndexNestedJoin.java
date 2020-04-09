@@ -24,11 +24,14 @@ public class IndexNestedJoin extends Join{
     private boolean eosr;                   // Whether end of stream (right table) is reached
 
     IndexBuilder indexTable;                // Build index for right table
-    ArrayList<Tuple> matches;               // Number for matching tuples
+    ArrayList<Tuple> matches;// Number for matching tuples
+
+    Join join;
 
     public IndexNestedJoin(Join jn) {
         super(jn.getLeft(), jn.getRight(), jn.getConditionList(), jn.getOpType());
         schema = jn.getSchema();
+        this.join = jn;
         jointype = jn.getJoinType();
         numBuff = jn.getNumBuff();
     }
@@ -148,7 +151,12 @@ public class IndexNestedJoin extends Join{
     }
         return outbatch;
     }
-
+    public Object clone() {
+        Join join = (Join) this.join.clone();
+        IndexNestedJoin newJoin = new IndexNestedJoin(join);
+        newJoin.setSchema((Schema)this.schema.clone());
+        return newJoin;
+    }
     /**
      * Close the operator
      **/

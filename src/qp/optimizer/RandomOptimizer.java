@@ -68,7 +68,6 @@ public class RandomOptimizer {
                     inj.setRight(right);
                     inj.setNumBuff(numbuff);
                     return inj;
-
                 default:
                     return node;
             }
@@ -84,7 +83,7 @@ public class RandomOptimizer {
             Operator base = makeExecPlan(((Distinct) node).getBase());
             ((Distinct) node).setBase(base);
             return node;
-        }else if (node.getOpType() == OpType.PROJECT) {
+        }else if (node.getOpType() == OpType.SORT) {
             Operator base = makeExecPlan(((Sort) node).getBase());
             ((Sort) node).setBase(base);
             return node;
@@ -177,8 +176,9 @@ public class RandomOptimizer {
                         try {
                             neighborCost = pc.getCost(neighbor);
                         } catch (Exception e) {
-                            System.out.println("fatal error.");
-                            System.exit(0);
+                            throw e;
+                            //System.out.println("fatal error.");
+                            //System.exit(0);
                         }
                         System.out.println(neighborCost);
 

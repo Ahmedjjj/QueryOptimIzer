@@ -4,10 +4,7 @@
 
 package qp.operators;
 
-import qp.utils.Attribute;
-import qp.utils.Batch;
-import qp.utils.Condition;
-import qp.utils.Tuple;
+import qp.utils.*;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -29,10 +26,12 @@ public class NestedJoin extends Join {
     boolean eosl;                   // Whether end of stream (left table) is reached
     boolean eosr;                   // Whether end of stream (right table) is reached
 
+    Join join;
     public NestedJoin(Join jn) {
         super(jn.getLeft(), jn.getRight(), jn.getConditionList(), jn.getOpType());
         schema = jn.getSchema();
         jointype = jn.getJoinType();
+        join =jn;
         numBuff = jn.getNumBuff();
     }
 
@@ -178,6 +177,12 @@ public class NestedJoin extends Join {
         return outbatch;
     }
 
+    public Object clone (){
+        Join newJoin = (Join) join.clone();
+        NestedJoin nestedJoin = new NestedJoin(newJoin);
+        nestedJoin.setSchema((Schema) this.schema.clone());
+        return nestedJoin;
+    }
     /**
      * Close the operator
      */

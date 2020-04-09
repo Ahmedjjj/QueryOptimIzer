@@ -113,7 +113,8 @@
       <workItem from="1585367116614" duration="72000" />
       <workItem from="1586242829018" duration="3045000" />
       <workItem from="1586261612035" duration="5079000" />
-      <workItem from="1586311127067" duration="28236000" />
+      <workItem from="1586311127067" duration="28324000" />
+      <workItem from="1586397439890" duration="5174000" />
     </task>
     <servers />
   </component>
@@ -185,18 +186,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1584769396785" />
-    <state x="341" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1586311368465">
+    <state x="341" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1586397488203">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="341" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1586311368465" />
+    <state x="341" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1586397488203" />
     <state x="376" y="234" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1586264855805">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="376" y="234" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1280.680@0.0.1280.680" timestamp="1586264855805" />
-    <state x="336" y="72" width="609" height="536" key="find.popup" timestamp="1586340909914">
+    <state x="336" y="72" width="609" height="536" key="find.popup" timestamp="1586398856097">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="336" y="72" width="609" height="536" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1586340909914" />
+    <state x="336" y="72" width="609" height="536" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1586398856097" />
     <state x="91" y="0" key="new project wizard" timestamp="1584847763117">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

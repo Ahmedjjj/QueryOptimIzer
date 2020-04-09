@@ -179,6 +179,7 @@ public class RandomInitialPlan {
             Schema newsche = left.getSchema().joinWith(right.getSchema());
             jn.setSchema(newsche);
 
+
             /** randomly select a join type**/
             int numJMeth = JoinType.numJoinTypes();
             int joinMeth = RandNumb.randInt(0, numJMeth - 1);
