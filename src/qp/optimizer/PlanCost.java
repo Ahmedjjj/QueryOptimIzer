@@ -183,7 +183,7 @@ public class PlanCost {
                 joincost = leftpages + (leftpages / available_buff) * rightpages;
                 break;
             case JoinType.INDEXNESTED: // adding the cost for IndexNestedLoopJoin
-                joincost = (int) (leftpages + (1.2) * outtuples );
+                joincost = (int) (leftpages + (1.2 + 1) * lefttuples);
                 break;
             default:
                 System.out.println("join type is not supported");
